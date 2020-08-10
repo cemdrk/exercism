@@ -5,7 +5,7 @@ import "fmt"
 
 // ShareWith returns "One for (name), one for me.".
 func ShareWith(name string) string {
-	if (name == "") {
+	if name == "" {
 		name = "you"
 	}
 
