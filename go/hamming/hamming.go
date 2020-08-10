@@ -5,11 +5,11 @@ import "errors"
 
 // Distance returns distance between two strings of equal length.
 func Distance(a, b string) (int, error) {
-	diff := 0
-
 	if len(a) != len(b) {
-		return -1, errors.New("string length must be equal")
+		return 0, errors.New("string length must be equal")
 	}
+
+	diff := 0
 
 	// count letter differences
 	for i := range a {
