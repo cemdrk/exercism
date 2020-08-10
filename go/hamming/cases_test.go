@@ -10,6 +10,13 @@ var testCases = []struct {
 	want        int
 	expectError bool
 }{
+	{
+		// non-ASCII
+		s1:          "aüa",
+		s2:          "aÃa",
+		want:        1,
+		expectError: false,
+	},
 	{ // empty strands
 		"",
 		"",

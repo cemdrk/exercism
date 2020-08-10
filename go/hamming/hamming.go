@@ -9,11 +9,11 @@ func Distance(a, b string) (int, error) {
 		return 0, errors.New("string length must be equal")
 	}
 
-	diff := 0
+	var diff int
 
 	// count letter differences
-	for i := range a {
-		if a[i] != b[i] {
+	for i, chr := range []byte(a) {
+		if chr != b[i] {
 			diff++
 		}
 	}
