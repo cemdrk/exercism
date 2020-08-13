@@ -36,11 +36,10 @@ func isAnyNegativeOrZero(nums ...float64) bool {
 
 // KindFromSides determines type of triangle.
 func KindFromSides(a, b, c float64) Kind {
-	if isAnyNegativeOrZero(a, b, c) {
-		return NaT
-	}
-
-	if !isTriangle(a, b, c) {
+	switch {
+	case isAnyNegativeOrZero(a, b, c):
+		fallthrough
+	case !isTriangle(a, b, c):
 		return NaT
 	}
 
